@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: 
 domain_name: "http://yourblog-domain.com"
-google_analytics: "G-D66T2K2YCV"
+google_analytics: "UA-250160296-2"
 #"UA-XXXXXXXX-X"
 plugins: [jekyll-paginate]
 
