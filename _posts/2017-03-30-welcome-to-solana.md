@@ -1,11 +1,9 @@
 ---
-title: Welcome to Solana
+title: Welcome to Solanads
 teaser: These sample posts are provided as a template for creating your own content.
 category: intro
 tags: [markdown, workflow, foss]
-reddit_post: 'https://www.reddit.com/r/Jekyll/comments/6258ln/welcome_to_solana/'
-featured_comments:
-  - url: 'https://www.reddit.com/r/Jekyll/comments/6258ln/welcome_to_solana/dfkw5k2/'
+
 ---
 
 GitHub Pages uses a Markdown engine called <dfn>kramdown</dfn> for formatting text posts. kramdown is a superset of Markdown, meaning:
@@ -13,7 +11,7 @@ GitHub Pages uses a Markdown engine called <dfn>kramdown</dfn> for formatting te
 1. anything that’s valid Markdown is also valid kramdown, and
 2. it provides and strictly specifies a number of features that are not available in Markdown.[^1] 
 
-Consult the official [kramdown syntax reference][kds] for an exhaustive list of features and how to use them.
+Consult the official [kramdown syntax reference][kds] for an exhaustive list of features and how to use them.한글
 
 ---
 
