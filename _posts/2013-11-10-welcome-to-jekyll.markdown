@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to Jekyll! ㅎㅇ"
 date:   2015-11-10 10:18:00
 categories: Thriller Comedy Horror
+comments: true
 ---
 
 야호
