@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: 
 domain_name: "http://yourblog-domain.com"
-google_analytics: "UA-250160296-2"
+google_analytics: "G-D66T2K2YCV"
 #"UA-XXXXXXXX-X"
 plugins: [jekyll-paginate]
 
@@ -18,3 +18,10 @@ author: "Your Name"
 
 # Disqus config
 disqus-shortname: "myAssign"
+# Analytics
+analytics:
+  provider               : "google" 
+                          # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "G-D66T2K2YCV"
+    anonymize_ip         : # true, false (default)
