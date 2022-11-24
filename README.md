@@ -1,249 +1,135 @@
-# Centrarium [![Circle CI](https://circleci.com/gh/bencentra/centrarium/tree/master.svg?style=svg)](https://circleci.com/gh/bencentra/centrarium/tree/master)
+Solana – a Wholesome, Flat, Sunshiny Jekyll Theme
+===============================================
 
-A simple yet classy theme for your Jekyll website or blog. Customizable to fit your style or brand.
+**Solana** is a theme for the [Jekyll][jk] static site generator. [View the demo][demo].
 
-Built with these awesome libraries:
-* [Bourbon][bourbon]
-* [Neat][neat]
-* [Bitters][bitters]
-* [Refills][refills]
-* [Font Awesome][fontawesome]
-* [HighlightJS][highlightjs]
-* [Lightbox][lightbox]
+### Features
 
-Here's a [demo](http://bencentra.com/centrarium). It also works on [GitHub Pages](http://bencentra.github.io/centrarium/). I also use it for [my own website][bencentra].
+* Compatible with GitHub Pages
+* Supports categories & tags
+* Responsive design
+* Lightweight (no jQuery, Bootstrap, etc.) 
+* Obfuscates email addresses for protection against email harvesting bots
+* Comments via outbound links to Reddit
 
-Inspired by dirkfabisch's [Mediator](https://github.com/dirkfabisch/mediator) theme, which I previously used for my own blog, as well as [Type Theme](http://rohanchandra.github.io/type-theme/).
+![](https://raw.githubusercontent.com/rlue/i/master/solana/responsive.gif)
 
-Cover image by Chris M. Morris ([flickr][cover]).
+![](https://raw.githubusercontent.com/rlue/i/master/solana/device_mockup.png)
 
-## Features
+Installation
+------------
 
-This theme comes with a number of features, including:
-* Easily customizable fonts and colors
-* Cover images for your homepage and blog posts
-* Pagination enabled by default
-* Archiving of posts by categories and tags
-* Syntax highlighting for code snippets
-* Disqus integration for post comments
-* Lightbox for viewing full-screen photos and albums
-* Google Analytics with custom page name tracking
-* Social media integration (Twitter, Facebook, LinkedIn, GitHub, and more)
+### Cloning Solana to your GitHub Pages
 
-## Installation
+1. Prepare a [new GitHub repository][new] named after your GitHub Pages address (`<username>.github.io`). Do not initialize with a `README`, `.gitignore`, or license.
+2. Clone this repository:
 
-If you're just getting started with Jekyll, you can use this repository as a starting point for your own site. Just [download this project](https://github.com/bencentra/centrarium/archive/master.zip) and add all the files to your project. Add your blog posts to the `posts/` directory, and create your pages with the proper Jekyll front matter (see `posts.html` for an example).
+        $ git clone https://github.com/rlue/jekyll-solana.git
 
-If your site already uses Jekyll, follow these steps:
+3. Associate your local copy with the GitHub Pages repo you just created:
 
-1. Replace the files in the `_includes`, `_layouts`, and `_sass` directories with those from this project.
-2. Replace your `index.html` with the one from this project, and copy over the `posts.html` file as well.
-3. Copy the contents of the `_config.yml` from this project in to yours, and update the necessary information.
+        $ cd solana
+        $ git remote rm origin
+        $ git remote add origin https://github.com/<username>/<username>.github.io
 
-Don't forget to install Jekyll and other dependencies:
-```bash
-# cd into project directory
-cd centrarium
-# install Bundler if you don't have it already
-gem install bundler
-# install jekyll, jekyll-archives, jekyll-sitemap, and jekyll-paginate
-bundle install
-```
+4. In `_config.yml`, replace the `baseurl` site variable (`/jekyll-solana`) with an empty string (`''`):
 
-## Stackbit Deploy
+        $ sed -i "s/\/jekyll-solana/''            /" _config.yml     # on UNIX
+        $ sed -i '' "s/\/jekyll-solana/''            /" _config.yml  # on Mac
 
-This theme is ready to import into Stackbit. This theme can be deployed to Netlify and you can connect any headless CMS including Forestry, NetlifyCMS, DatoCMS or Contentful. 
+5. And push:
 
-[![Create with Stackbit](https://assets.stackbit.com/badge/create-with-stackbit.svg)](https://app.stackbit.com/create?theme=https://github.com/bencentra/centrarium)
+        $ git push -u origin master
 
-## Updating Header and Footer Links
+In just a few minutes, your site should be live at https://\<username\>.github.io/!
 
-Links in the header and footer are auto-generated. Links will be made for all files marked `category: page`, that have a title, and have the custom `main_nav` front-matter variable set to `true`. You can modify the rules for link generation in `_layouts/nav_links.html`.
+### Previewing the site on your machine
 
-## Updating Styles
+1. Ensure that you have a Ruby development environment installed on your machine, including [Bundler][bun].
+2. Install the dependencies:
 
-If you want change the CSS of the theme, you'll probably want to check out these files in the `_sass/` directory:
+        $ bundle install
 
-* `base/_variables.scss`: Common values found throughout the project, including base font size, font families, colors, and more.
-* `base/_typography.scss`: Base typography values for the site (see `typography.html` for a demonstration)
-* `_layout.scss`: The primary styles for the layout and design of the theme.
+3. Start the server: 
 
-### Important Variables
+        $ bundle exec jekyll serve
 
-Here are the important variables from `base/_variables.scss` you can tweak to customize the theme to your liking:
+You should now have a development preview of your site at http://localhost:4000/.
 
-* `$base-font-family`: The font-family of the body text. Make sure to `@import` any new fonts!
-* `$heading-font-family`: The font-family of the headers. Make sure to `@import` any new fonts!
-* `$base-font-size`: The base font-size. Defaults to $em-base from Bourbon (`bourbon/settings/_px-to-em.scss`).
-* `$base-font-color`: The color for the body text.
-* `$action-color`: The color for links in the body text.
-* `$highlight-color`: The color for the footer and page headers (when no cover image provided).
+Usage
+-----
 
-## Configuration
+### Customizing the theme
 
-All configuration options can be found in `_config.yml`.
+Edit the data in `_config.yml` as appropriate. You’ll also want to rewrite the `README` and replace identifying graphics (`/i/avatar.png`, `/favicon.ico`) with your own.
 
-### Site Settings
+### Creating new posts
 
-* __title:__ The title for your site. Displayed in the navigation menu, the `index.html` header, and the footer.
-* __subtitle:__ The subtitle of your site. Displayed in the `index.html` header.
-* __email:__ Your email address, displayed with the Contact info in the footer.
-* __name:__ Your name. _Currently unused._
-* __description:__ The description of your site. Used for search engine results and displayed in the footer.
-* __baseurl:__ The subpath of your site (e.g. /blog/).
-* __url:__ The base hostname and protocol for your site.
-* __cover:__ The relative path to your site's cover image.
-* __logo:__ The relative path to your site's logo. Used in the navigation menu instead of the title if provided.
+As with any Jekyll site, posts are generated from Markdown files placed in the `_posts` directory, and must be named according to the following format: `<year>-<month>-<day>-<url_slug>.md`. See the sample posts for examples of how to format rich text in Markdown.
 
-### Build Settings
+Post content must be preceded by [YAML frontmatter][doc-fm] describing, at a minimum, the title of the post. Keep titles under 60 characters, and teasers under 160.
 
-* __markdown:__ Markdown parsing engine. Default is kramdown.
-* __inter_post_navigation:__ Whether to render links to the next and previous post on each post.
+### Categories & Tags
 
-### Pagination settings
+This repository automatically generates “category” and “tag” archive pages based on labels provided by you in each post’s aforementioned YAML frontmatter. This feature is not available through Jekyll itself or the plugins approved for use on GitHub Pages, so it has been implemented using [git hooks][ghk].
 
-See the documentation for [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration) for more details.
-
-### Archive Settings
-
-Although this theme comes with a combined, categorized archive (see `posts.html`), you can enable further archive creation thanks to [jekyll-archives][archives]. Support for category and tag archive pages is included, but you can also add your own archive pages for years, months, and days.
-
-To change archive settings, see the __jekyll-archives__ section of `_config.yml`:
-
-```yml
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: 'archive'
-  permalinks:
-    category: '/category/:name/'
-    tag: '/tag/:name/'
-```
-
-To fully disable the archive, remove the __jekyll-archives__ section AND remove it from the __gems__ list.
-
-__NOTE:__ the Jekyll Archive gem is NOT included with GitHub pages! Disable the archive feature if you intend to deploy your site to GitHub pages. [Here is a guide](http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html) on how you can use the `jekyll archive` gem with GitHub pages. The general gist: compile the Jekyll site locally and then push that compiled site to GitHub.
-
-A sitemap is also generated using [jekyll-sitemap][sitemap].
-
-### Syntax Highlighting Settings
-
-Inside of a post, you can enable syntax highlighting with the `{% highlight <language> %}` Liquid tag. For example:
+To enable this feature, run the following command from the project root:
 
 ```
-{% highlight javascript %}
-function demo(string, times) {
-  for (var i = 0; i < times; i++) {
-    console.log(string);
-  }
-}
-demo("hello, world!", 10);
-{% endhighlight %}
+$ ln -s ../../.scripts/pre-commit.rb .git/hooks/pre-commit
 ```
 
-You can change the [HighlightJS theme][highlightjs_theme] in `_config.yml`:
+Now, these scripts will run every time you `git commit`, ensuring that your categories and tags pages always stay up-to-date.
 
-```yml
-highlightjs_theme: "monokai_sublime"
-```
+#### Explanation
 
-### Disqus Settings
+Solana implements categories and tags as [‘collections’][doc-col], meaning each has its own top-level directory in the project root (`/_category` & `/_tag`). Inside these directories, there is a file representing each category or tag.
 
-You can enable [Disqus][disqus] comments for you site by including one config option:
+These files are generated by `/.scripts/spawn_labels.rb`, based on the `category:` and `tags:` attributes listed at the top of each post. The wrapper script `/.scripts/pre-commit.rb` calls this first script, then adds the newly created files to the git repo.
 
-* __disqus_shortname:__ Your Disqus username. If the property is set, Disqus comments will be included with your blog posts.
+### Comments
 
-If you want to disable Disqus for only a specific page, add __disqus_disabled: true__ to the page's front matter.
+As a static site generator, Jekyll has no means to provide a commenting system. For this theme, discussion is outsourced to Reddit, and requires some manual intervention. The process is as follows:
 
-### Google Analytics Settings
+1. Publish a post.
+2. Post it to Reddit.
+3. Include the resulting Reddit URL in the post’s YAML frontmatter:
 
-You can enable basic [Google Analytics][ga] pageview tracking by including your site's tracking ID:
+        reddit_post: 'https://www.reddit.com/r/Jekyll/comments/6258ln/welcome_to_solana/'
 
-* __ga_tracking_id__: The Tracking ID for your website. You can find it on your Google Analytics dashboard. If the property is set, Google Analytics will be added to the footer of each page.
+   Now, a link to the Reddit discussion will appear at the end of the post content, before the footnotes (if any).
 
-### Social Settings
+   ![](https://raw.githubusercontent.com/rlue/i/master/solana/comments-1.png)
+4. If the post receives noteworthy comments that you would like to embed directly on the page, add their permalinks to the YAML frontmatter as well:
 
-Your personal social network settings are combined with the social sharing options. In the __social__ section of `_config.yml`, include an entry for each network you want to include. For example:
+        featured_comments:
+          - url: 'https://www.reddit.com/r/Jekyll/comments/6258ln/welcome_to_solana/dfjtxba/'
+            context: false
+            freeze: false
 
-```yml
-social:
-  - name: Twitter                         # Name of the service
-    icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
-    username: TheBenCentra                # (User) Name to display in the footer link
-    url: https://twitter.com/TheBenCentra # URL of your profile (leave blank to not display in footer)
-    desc: Follow me on Twitter            # Description to display as link title, etc
-    share: true                           # Include in the "Share" section of posts
-```
+   The `context` flag tells the embed script to include the target comment’s parent. The `freeze` flag prevents live updating in the event that a comment is edited after the fact. Both default to `false`.
 
-### Social Protocols
+   ![](https://raw.githubusercontent.com/rlue/i/master/solana/comments-2.png)
 
-Using the Open Graph Protocol or Twitter Card metadata, you can automatically set the images and text used when people share your site on Twitter or Facebook. These take a bit of setup, but are well worth it. The relevant fields are at the end of the `_config.yml` file.
+Modifying
+---------
 
-Also there is another protocol, the Open Source protocol, for saying where your site is hosted if the source is open. This helps develops more easily see your code if they are interested, or if they have issues. For more, see http://osprotocol.com.
+See the official documentation for an overview of [how Jekyll sites are organized][doc-dirs] or [how to get started][doc-qs].
 
-### Category Descriptions
+The CSS for this theme was organized following Harry Roberts’ [Inverted Triangle CSS architecture][itcss].
 
-You can enhance the `posts.html` archive page with descriptions of your post categories. See the __descriptions__ section of `_config.yml`:
+License
+-------
 
-```yml
-# Category descriptions (for archive pages)
-descriptions:
-  - cat: jekyll
-    desc: "Posts describing Jekyll setup techniques."
-```
+© 2017 Ryan Lue. This project is licensed under the terms of the MIT license.
 
-### Custom Page-Specific Javascript
-
-You can add page-specific javascript files by adding them to the top-level `/js` directory and including the filename in the __custom_js__ page's configuration file:
-
-```yml
-# Custom js (for individual pages)
----
-layout: post
-title:  "Dummy Post"
-date:   2015-04-18 08:43:59
-author: Ben Centra
-categories: Dummy
-custom_js:
-- Popmotion
-- Vue
----
-```
-
-The `/js/` directory would contain the corresponding files:
-
-```bash
-$ ls js/
-Popmotion.js Vue.js
-```
-
-## Contributing
-
-Want to help make this theme even better? Contributions from the community are welcome!
-
-Please follow these steps:
-
-1. Fork/clone this repository.
-2. Develop (and test!) your changes.
-3. Open a pull request on GitHub. A description and/or screenshot of changes would be appreciated!
-4. I ([Ben Centra](https://github.com/bencentra)) will review and merge the pull request.
-
-## License
-
-MIT. See [LICENSE.MD](https://github.com/bencentra/centrarium/blob/master/LICENSE.md).
-
-[bencentra]: http://bencentra.com
-[bourbon]: http://bourbon.io/
-[neat]: http://neat.bourbon.io/
-[bitters]: http://bitters.bourbon.io/
-[refills]: http://refills.bourbon.io/
-[fontawesome]: http://fortawesome.github.io/Font-Awesome/
-[highlightjs]: https://highlightjs.org/
-[highlightjs_theme]: https://highlightjs.org/static/demo/
-[lightbox]: http://lokeshdhakar.com/projects/lightbox2/
-[cover]: https://www.flickr.com/photos/79666107@N00/3796678503/in/photolist-6MuYfc-61Rtft-8XzPmY-a6Cozm-54eSMs-6oMJmk-aepZQq-9YkPHp-fiAEGE-dVP4Z5-oxPyJP-atKUFJ-9YHWA5-9YF2f2-9YF2gR-9YHVGN-9YHVvs-qZYYQ6-4JqP2i-a2peGy-9YHVUm-9YHVF7-9YHVCL-9YF3NK-cYteMo-aiPmb9-69dtAi-9YF21x-4aWpmn-7SLiUL-77pqVX-8vXbYv-4HGDSH-a2h5P1-8LsZrQ-9aj1ez-auPZ7q-9YHVMd-9YF2bi-9YF23D-8LpWpn-9an6KL-9YHVZL-dqZ3Cz-2GuvnX-9YHWUo-9YHVWd-p5Roh5-i1zTbv-6sYrUT
-[disqus]: https://disqus.com/
-[ga]: http://www.google.com/analytics/
-[archives]: https://github.com/jekyll/jekyll-archives
-[sitemap]: https://github.com/jekyll/jekyll-sitemap
+[jk]: http://jekyllrb.com/
+[demo]: https://solana.ryanlue.com/
+[new]: https://github.com/new
+[bun]: https://github.com/bundler/bundler#installation-and-usage
+[doc-fm]: https://jekyllrb.com/docs/frontmatter/
+[ghk]: http://githooks.com/
+[doc-col]: https://jekyllrb.com/docs/collections/
+[doc-dirs]: https://jekyllrb.com/docs/structure/
+[doc-qs]: https://jekyllrb.com/docs/quickstart/
+[itcss]: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
