@@ -2,7 +2,7 @@
 layout: post
 title:  "gooogle analytics"
 date:   2022-11-30 3:18:05
-categories: Study Markdown
+categories: google analytics
 disqus: true
 ---
 # 적용
