@@ -15,3 +15,4 @@ _includes/disqus.html을 만들어 _layouts/post.html에서 불러와주었다.
 ![](/assets/com.png)
 # Google Analytics 삽입
 글을 포스트했으니 읽어보면 좋겠다.
+[**Google Analytics**](/_posts/2022-11-29-google-analytics.markdown)
