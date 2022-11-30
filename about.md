@@ -3,4 +3,5 @@ layout: page
 title: About me 
 ---
 
-This is a static page. It could be an 'about page' if you'd like.
+# 유레카프로젝트
+제킬로 웹사이트를 만들고 있습니다.

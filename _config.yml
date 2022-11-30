@@ -14,7 +14,7 @@ plugins: [jekyll-paginate]
 
 # Details for the RSS feed generator
 url: ""
-author: "Your Name"
+author: "Ju Gamdong"
 
 # Disqus config
 disqus-shortname: "myAssign"
